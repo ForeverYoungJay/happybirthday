@@ -16,9 +16,13 @@ html,body{
 
 </head>
 <body>	
-<audio style="display: none;" autoplay>
-	<source src="happy.mp3" type="audio/mp3">
-</audio>
+<audio id="bgmusic" style="display:none;" src="happy.mp3" autoplay preload controls></audio>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+document.addEventListener("WeixinJSBridgeReady", function () {
+	document.getElementById("bgmusic").play();
+});
+</script>
 <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
 <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" ></canvas>
 <div class="overlay">
